@@ -24,6 +24,12 @@ function Loginpage() {
                 localStorage.setItem('PostItuser',true)
                 navigate('/homepage')
             }
+            else if(res === 'Password Is MisMatch'){
+                alert(res)
+            }
+            else{
+                alert(data.data.message)
+            }
         } catch (error) {
             alert(error)
         }

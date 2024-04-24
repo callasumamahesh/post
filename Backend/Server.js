@@ -20,10 +20,17 @@ mongoose.connect(process.env.DATABASE_URL)
 app.get('/userdata', async (req,res) => {
         let {email,password} = req.query;
         try {
-            
             const User = await PostItUsers.findOne({email})
             if(User){
-                res.status(200).json({message : 'YesAUser'})
+                if(User.password == password){
+                    res.status(200).json({message : 'YesAUser'})
+                }
+                else{
+                    res.status(200).json({message : 'Password Is MisMatch'})
+                }
+            }
+            else{
+                res.status(200).json({message : 'User Does not Exict'})
             }
         } catch (error) {
             console.log(error);
@@ -58,5 +65,5 @@ app.get('/yourposts',async(req,res) => {
     res.send(allposts)
 })
 
-const serverPort = 5000 
+const serverPort = process.env.PORT
 app.listen(serverPort,() => console.log('Server is running',{serverPort}))
