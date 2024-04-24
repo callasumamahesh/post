@@ -38,6 +38,10 @@ function CreatePost() {
         } catch (error) {
             alert(error)
         }
+        setPost({
+            post_description : '',
+            image : '',
+        })
     }
   return (
     <div className='postmaindiv'>

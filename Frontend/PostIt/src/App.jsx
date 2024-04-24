@@ -6,6 +6,7 @@ import {Route,Routes, useNavigate, useNavigation} from 'react-router-dom'
 import Homepage from './Components/Homepage'
 import CreatePost from './Components/CreatePost'
 import Allposts from './Components/Allposts'
+import Update from './Components/Update'
 function App() {
   const navigate = useNavigate()
   const isuser = localStorage.getItem('PostItuser')
@@ -40,6 +41,7 @@ function App() {
           <Route path='/homepage' element = {<Homepage />}></Route>
           <Route path='/postapost' element = {<CreatePost />}></Route>
           <Route path='/yourposts' element = {<Allposts />}></Route>
+          <Route path='/updatepost' element = {<Update />}></Route>
         </Routes>
       </div>
     </>

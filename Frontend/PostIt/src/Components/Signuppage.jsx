@@ -31,7 +31,6 @@ function Loginpage() {
             ...prevDetails,
             [name] : value,
     }))
-    console.log(details);
     }
   return (
     <div className='loginpage'>

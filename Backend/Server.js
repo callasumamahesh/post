@@ -22,6 +22,7 @@ app.get('/userdata', async (req,res) => {
         try {
             const User = await PostItUsers.findOne({email})
             if(User){
+        
                 if(User.password == password){
                     res.status(200).json({message : 'YesAUser'})
                 }
@@ -63,6 +64,40 @@ app.post('/postit',async(req,res) => {
 app.get('/yourposts',async(req,res) => {
     const allposts = await PostItPosts.find({})
     res.send(allposts)
+})
+
+
+app.delete('/deletepost/:itemid',async (req,res) => {
+    try {
+        const id = req.params.itemid;
+        const findone = await PostItPosts.findOneAndDelete({_id : id})
+        if(findone){
+            res.send({message : 'Deleted'})
+        }
+        else{
+            res.send({message : 'Post Not Deleted'})
+        }
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+app.put('/updatepost', async (req,res) => {
+    try {  
+        const {id,post_description,image} = req.body
+        const updatedPost = await PostItPosts.findOneAndUpdate(
+            { _id: id },
+            { post_description, image },
+            { new: true }
+        );
+        if (!updatedPost) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        res.json({ message: 'Post updated successfully'})
+    } catch (error) {
+        console.log(error);
+    }
+    
 })
 
 const serverPort = process.env.PORT
