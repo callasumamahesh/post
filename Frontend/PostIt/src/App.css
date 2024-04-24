@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+.header{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.headerbtn{
+    display: flex;
+    gap: 1rem;
+}
+.head{
+    text-align: center;
+    margin-top: 1rem;
+}
+.userveri{
+    display: flex;
+    gap: 1rem;
+}
+.loginpage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginform{
+    min-width: 350px;
+    min-height: 300px;
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 20px;
+}
+input[type='text'],input[type="password"]{
+    padding: 9px;
+    outline: none;
+    border-radius: 7px;
+    min-width: 250px;
+    font-size: 14px;
+    font-family: 'Roboto';
+}
+
+.primarybutton{
+    min-width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3d70cf;
+    color: white;
+    cursor: pointer;
+}
+.postmaindiv{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postdiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+#Post{
+    min-width: 500px;
+    min-height: 300px;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 14px;
+    font-family: 'Roboto';
+    outline: none;
+    font-weight: 600;
+}
+.links{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#fileInput{
+    display: none;
+}
+#filelabel{
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 5px;
+}
+.filesdiv{
+    border: 2px solid gray;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #3d70cf;
+    border-radius: 7px;
+}
+.filesdiv button{
+    background-color: #3d70cf;
+    border: none;
+    margin-left: 1rem;
+    color: white;
+}
+.fileinput{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+.postp{
+    min-height: 500px;
+    width: 50%;
+    margin-top: 1rem;
+}
+.postimage{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    width: 50%;
+}
+.postyourdiv{
+    padding: 1rem;
+    border:2px solid gray;
+    border-radius: 20px;
+    margin:0px 1rem;
+    min-width: 500px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.yourpostsmaindiv{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+@media (max-width : 450px){
+    .primarybutton{
+        min-width: 90px;
+    }
+    #Post{
+        min-width: 300px;
+        min-height: 250px;
+        border-radius: 10px;
+        padding: 1rem;
+        font-size: 14px;
+        font-family: 'Roboto';
+        outline: none;
+        font-weight: 600;
+    }
+
+    .postyourdiv{
+        min-width:350px;
+        border: 2px solid gray;
+        border-radius: 10px;
+        min-height: 100px;
+    }
+}
